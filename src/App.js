@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header/Header';
+import Views from './Views';
+import { DataContext } from './Context';
 
-function App() {
+const App = () => {
+
+  const [products, setProducts] = useState([])
+  const [details, setDetails] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataContext.Provider value={{
+      products,
+      setProducts,
+      details,
+      setDetails
+    }}>
+      <Header />
+      <Views />
+    </DataContext.Provider>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,13 @@
+.desc {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.price {
+
+    width: 250px;
+    height: 250px;
+    font-size: 100%;
+
+}
